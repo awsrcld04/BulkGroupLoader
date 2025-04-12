@@ -1,9 +1,4 @@
-﻿//****************************************
-// Copyright (c) Thinkability Group 2011
-// SystemsAdminPro.com
-//****************************************
-
-//Description:
+﻿//Description:
 //Loads users into a group from a specified file
 
 using System;
