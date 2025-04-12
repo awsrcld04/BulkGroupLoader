@@ -36,7 +36,7 @@ namespace BulkGroupLoader
 
         static void funcPrintParameterSyntax()
         {
-            Console.WriteLine("BulkGroupLoader v1.0 (c) 2011 SystemsAdminPro.com");
+            Console.WriteLine("BulkGroupLoader v1.0");
             Console.WriteLine();
             Console.WriteLine("Description: Load users into a group using the user account's name");
             Console.WriteLine();
