@@ -340,34 +340,31 @@ namespace BulkGroupLoader
             {
                 Construct.strProgramName = "BulkGroupLoader";
               
-                if (Construct.LicenseActivation())
+                if (args.Length == 0)
                 {
-                    if (args.Length == 0)
+                    Construct.PrintParameterWarning(Construct.strProgramName);
+                }
+                else
+                {
+                    if (args[0] == "-?")
                     {
-                        Construct.PrintParameterWarning(Construct.strProgramName);
+                        funcPrintParameterSyntax();
                     }
                     else
                     {
-                        if (args[0] == "-?")
+                        string[] arrArgs = args;
+                        CMDArguments objArgumentsProcessed = funcParseCmdArguments(arrArgs);
+
+                        if (objArgumentsProcessed.bParseCmdArguments)
                         {
-                            funcPrintParameterSyntax();
+                            funcProgramExecution(objArgumentsProcessed);
                         }
                         else
                         {
-                            string[] arrArgs = args;
-                            CMDArguments objArgumentsProcessed = funcParseCmdArguments(arrArgs);
-
-                            if (objArgumentsProcessed.bParseCmdArguments)
-                            {
-                                funcProgramExecution(objArgumentsProcessed);
-                            }
-                            else
-                            {
-                                Construct.PrintParameterWarning(Construct.strProgramName);
-                            } // check objArgumentsProcessed.bParseCmdArguments
-                        } // check args[0] = "-?"
-                    } // check args.Length == 0
-                } // funcLicenseCheck()
+                            Construct.PrintParameterWarning(Construct.strProgramName);
+                        } // check objArgumentsProcessed.bParseCmdArguments
+                    } // check args[0] = "-?"
+                } // check args.Length == 0
             }
             catch (Exception ex)
             {
