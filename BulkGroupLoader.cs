@@ -1,4 +1,8 @@
-﻿//Description:
+﻿// Copyright (C) 2025 Akil Woolfolk Sr. 
+// All Rights Reserved
+// All the changes released under the MIT license as the original code.
+
+//Description:
 //Loads users into a group from a specified file
 
 using System;
@@ -10,7 +14,7 @@ using System.DirectoryServices;
 using System.DirectoryServices.AccountManagement;
 using Microsoft.Win32;
 using System.Reflection;
-using SystemsAdminPro.Utility;
+// NEED TO FIX -> using .Utility;
 
 
 namespace BulkGroupLoader
@@ -240,9 +244,7 @@ namespace BulkGroupLoader
             // if bEventLogStartStop, log start event
             try
             {
-                Construct.ProgramRegistryTag(Construct.strProgramName);
-
-                if (Construct.CheckForFile(objCMDArguments.strInputFileName))
+                  if (Construct.CheckForFile(objCMDArguments.strInputFileName))
                 {
                     PrincipalContext ctxDomain = Construct.CreateDomainPrincipalContext();
 
